@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <main className="flex flex-col items-center justify-center w-full flex-1 px-4 sm:px-20 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
+        <h1 className="text-4xl sm:text-5xl font-bold rainbow-text mb-4">
           igmoodlist
         </h1>
         <p className="text-lg text-secondary-foreground mb-6">
