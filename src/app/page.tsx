@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getSongRecommendations } from "@/services/spotify";
 import { generatePlaylist } from "@/ai/flows/generate-playlist";
 import { Song } from "@/services/spotify";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const [instagramHandle, setInstagramHandle] = useState("");
@@ -112,11 +112,14 @@ export default function Home() {
 
         {loading && playlist.length === 0 && (
           <div className="mt-8 w-full max-w-md">
-            <h2 className="text-2xl font-semibold mb-4">Generating Playlist</h2>
+            <h2 className="text-2xl font-semibold mb-4">Analyzing Instagram Profile...</h2>
             {[...Array(10)].map((_, index) => (
               <Card key={index} className="mb-2">
                 <CardContent className="flex items-center space-x-4 p-4">
-                  <Skeleton className="w-12 h-12 rounded-full" />
+                  <Avatar className={cn(loading && "animate-pulse")}>
+                    <AvatarImage src={`https://picsum.photos/50/50?random=${index}`} alt="Analyzing" />
+                    <AvatarFallback>Analyzing...</AvatarFallback>
+                  </Avatar>
                   <div>
                     <Skeleton className="h-4 w-[250px]" />
                     <Skeleton className="h-4 w-[150px] mt-2" />
