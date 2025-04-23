@@ -89,7 +89,7 @@ export default function Home() {
               <Card key={index} className="mb-2">
                 <CardContent className="flex items-center space-x-4 p-4">
                   <Avatar>
-                    <AvatarImage src={`https://picsum.photos/50/50?random=${index}`} alt={song.name} />
+                    <AvatarImage src={`https://picsum.photos/50/50?random=analyzing`} alt={song.name} />
                     <AvatarFallback>{song.artist.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div>
@@ -118,7 +118,7 @@ export default function Home() {
                 <Card key={index} className="mb-2 animate-pulse">
                   <CardContent className="flex items-center space-x-4 p-4">
                     <Avatar>
-                      <AvatarImage src={`https://picsum.photos/50/50?random=${index}`} alt="Analyzing" />
+                      <AvatarImage src={`https://picsum.photos/50/50?random=analyzing`} alt="Analyzing" />
                       <AvatarFallback>Analyzing...</AvatarFallback>
                     </Avatar>
                     <div>
@@ -129,7 +129,7 @@ export default function Home() {
                 </Card>
               ))}
               <p className="text-sm text-muted-foreground">
-                This may take a moment...
+                Creating music magic...
               </p>
             </div>
           </div>
