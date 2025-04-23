@@ -113,20 +113,25 @@ export default function Home() {
         {loading && playlist.length === 0 && (
           <div className="mt-8 w-full max-w-md">
             <h2 className="text-2xl font-semibold mb-4">Analyzing Instagram Profile...</h2>
-            {[...Array(10)].map((_, index) => (
-              <Card key={index} className="mb-2">
-                <CardContent className="flex items-center space-x-4 p-4">
-                  <Avatar className={cn(loading && "animate-pulse")}>
-                    <AvatarImage src={`https://picsum.photos/50/50?random=${index}`} alt="Analyzing" />
-                    <AvatarFallback>Analyzing...</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <Skeleton className="h-4 w-[250px]" />
-                    <Skeleton className="h-4 w-[150px] mt-2" />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="flex flex-col gap-2">
+              {[...Array(3)].map((_, index) => (
+                <Card key={index} className="mb-2 animate-pulse">
+                  <CardContent className="flex items-center space-x-4 p-4">
+                    <Avatar>
+                      <AvatarImage src={`https://picsum.photos/50/50?random=${index}`} alt="Analyzing" />
+                      <AvatarFallback>Analyzing...</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <Skeleton className="h-4 w-[250px]" />
+                      <Skeleton className="h-4 w-[150px] mt-2" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+              <p className="text-sm text-muted-foreground">
+                This may take a moment...
+              </p>
+            </div>
           </div>
         )}
       </main>
